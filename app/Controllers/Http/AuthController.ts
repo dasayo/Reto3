@@ -67,6 +67,7 @@ export default class AuthController {
   }
 
   public async getUsuario({ response, params, auth }: HttpContextContract) {
+
     if(auth.user?.idPerfil == 1){
       const user = await User.find(params.id)
       return response.status(200).json({ user })
